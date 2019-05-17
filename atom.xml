@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://sangedon.com/"/>
+  <link href="http://sangedon.cn/"/>
   <updated>2019-05-16T07:46:36.000Z</updated>
-  <id>http://sangedon.com/</id>
+  <id>http://sangedon.cn/</id>
   
   <author>
     <name>董先生</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://sangedon.com/2019/05/16/hello-world/"/>
-    <id>http://sangedon.com/2019/05/16/hello-world/</id>
+    <link href="http://sangedon.cn/2019/05/16/hello-world/"/>
+    <id>http://sangedon.cn/2019/05/16/hello-world/</id>
     <published>2019-05-16T07:38:57.000Z</published>
     <updated>2019-05-16T07:46:36.000Z</updated>
     
