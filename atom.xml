@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sange</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://sangedon.com/"/>
+  <updated>2019-05-16T07:46:36.000Z</updated>
+  <id>http://sangedon.com/</id>
+  
+  <author>
+    <name>董先生</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://sangedon.com/2019/05/16/hello-world/"/>
+    <id>http://sangedon.com/2019/05/16/hello-world/</id>
+    <published>2019-05-16T07:38:57.000Z</published>
+    <updated>2019-05-16T07:46:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to Sange ！</p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to Sange ！&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
