@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sangedon.cn/categories/index.html</loc>
+    
+    <lastmod>2019-05-17T08:47:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sangedon.cn/about/index.html</loc>
+    
+    <lastmod>2019-05-17T08:46:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://sangedon.cn/tags/index.html</loc>
+    
+    <lastmod>2019-05-17T08:45:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://sangedon.cn/repository/index.html</loc>
     
     <lastmod>2019-05-17T08:25:40.000Z</lastmod>
@@ -16,13 +37,6 @@
   </url>
   
   <url>
-    <loc>http://sangedon.cn/links/index.html</loc>
-    
-    <lastmod>2019-05-17T06:45:01.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://sangedon.cn/books/index.html</loc>
     
     <lastmod>2019-05-17T06:45:01.000Z</lastmod>
@@ -30,16 +44,9 @@
   </url>
   
   <url>
-    <loc>http://sangedon.cn/categories/index.html</loc>
+    <loc>http://sangedon.cn/links/index.html</loc>
     
-    <lastmod>2019-05-16T08:32:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sangedon.cn/about/index.html</loc>
-    
-    <lastmod>2019-05-16T08:32:24.000Z</lastmod>
+    <lastmod>2019-05-17T06:45:01.000Z</lastmod>
     
   </url>
   
@@ -54,13 +61,6 @@
     <loc>http://sangedon.cn/archives/index.html</loc>
     
     <lastmod>2019-05-16T08:30:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://sangedon.cn/tags/index.html</loc>
-    
-    <lastmod>2019-05-16T08:28:32.000Z</lastmod>
     
   </url>
   
