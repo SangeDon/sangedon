@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Mysql索引</title>
+      <link href="/2019/05/21/Mysql%E7%B4%A2%E5%BC%95/"/>
+      <url>/2019/05/21/Mysql%E7%B4%A2%E5%BC%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>索引是存储引擎中用于快速找到记录的一种数据结构，因此索引优化是对于查询性能优化最有效的手段，尤其是当表中数据越来越大时。然而，不恰当的索引在数据量逐渐增大的情况下会导致性能的急剧下降，而历史经验告诉我们，<strong>最优</strong>的索引有时比一个<strong>好的</strong>索引性能要好两个数量级，因此，创建一个真正的最优索引对于提升查询性能非常有利。</p><ul><li>小实例</li></ul><p>如果在<code>user</code>表的<code>user_id</code>字段上创建了索引，Mysql如何执行下面这条语句？</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> user_id = <span class="number">10</span>;</span><br></pre></td></tr></table></figure><p>就像我们查字典一样，Mysql首先在索引中查找值为<code>10</code>的索引，然后根据索引找到<code>user_id</code>为<code>10</code>的所有行并返回</p><h2 id="索引的类型"><a href="#索引的类型" class="headerlink" title="索引的类型"></a>索引的类型</h2><p>索引是在存储引擎层而非服务器层实现的，不同的存储引擎对于索引均有各自的实现，且同一种索引在不同的存储引擎中实现方式也可能不同</p><h3 id="B-Tree索引"><a href="#B-Tree索引" class="headerlink" title="B-Tree索引"></a>B-Tree索引</h3><p>一般我们所谈论的引擎在没有特别指明时多为B-Tree索引</p><h3 id="Hash索引"><a href="#Hash索引" class="headerlink" title="Hash索引"></a>Hash索引</h3><p>基于哈希表实现，只有精确匹配的查询才有效，对于每行数据，存储引擎都会对所有的索引列计算一个哈希码，不同的键值计算的哈希码不一致，而哈希索引将所有的哈希码存储在索引中，同时保存指向每行记录的指针。</p><p>如果多行的索引列计算的哈希值相同，索引会以链表的方式存放多个记录的指针到同一个哈希码条目中</p><ul><li>查询过程</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username = <span class="string">'sange'</span>;</span><br></pre></td></tr></table></figure><p>如以上查询语句，若使用的是哈希索引，且索引列为<code>username</code>，则Mysql先根据where子句中的username的值计算哈希值，如 hash(‘sange’’) = 8080，Mysql在索引中查询值为<code>8080</code>的索引，则可以查到到指向<code>username</code>为<code>sange</code>的行，最后比较第三行的值是否和要查找的值相同</p><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul><li>只包含哈希值和行指针，不存储字段值，因此不能避免读取行。由于访问内存中的行速度非常快，因此，多数情况下对于性能影响并不明显</li><li>哈希索引数据并非按照顺序存储，因此无法用于排序</li><li>由于是以所有的索引列的值来计算哈希值，因此也不支持部分索引匹配查找；如索引列为A，B，查询时只有索引列<code>A | B</code>，此时无法使用索引</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+            <tag> 高性能Mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分布式锁的概念及实现</title>
       <link href="/2019/05/20/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
       <url>/2019/05/20/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0/</url>
