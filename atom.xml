@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sangedon.cn/"/>
-  <updated>2019-05-22T11:10:35.000Z</updated>
+  <updated>2019-05-22T12:52:19.000Z</updated>
   <id>http://sangedon.cn/</id>
   
   <author>
@@ -21,14 +21,18 @@
     <link href="http://sangedon.cn/2019/05/22/XPath%E4%B8%8ESchematron%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
     <id>http://sangedon.cn/2019/05/22/XPath与Schematron的概念与使用/</id>
     <published>2019-05-22T03:05:29.000Z</published>
-    <updated>2019-05-22T11:10:35.000Z</updated>
+    <updated>2019-05-22T12:52:19.000Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="Others" scheme="http://sangedon.cn/categories/Others/"/>
     
-      <category term="学习笔记 xml" scheme="http://sangedon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-xml/"/>
+    
+      <category term="学习笔记" scheme="http://sangedon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="xml" scheme="http://sangedon.cn/tags/xml/"/>
     
   </entry>
   

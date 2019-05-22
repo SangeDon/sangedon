@@ -364,7 +364,7 @@ div {
     transition-delay: 0s;
     transition-property: border;
     border-bottom: 1px dashed #ccc;
-    width: 70%; }
+    width: 100%; }
     .listing .archive-li article h3 {
       display: inline;
       font-size: 16px;
