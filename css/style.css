@@ -172,9 +172,16 @@ div {
     font-weight: 400; }
     .post .post-title a {
       color: #555; }
-  .post .post-meta {
+  .post .post-meta-index {
     padding: 0;
     margin: 15px 0 0;
+    color: #6E7173;
+    float: left;
+    display: inline;
+    text-indent: .15em; }
+  .post .post-meta {
+    padding: 0;
+    margin: 15px 0 50px 0;
     color: #6E7173;
     float: left;
     display: inline;
