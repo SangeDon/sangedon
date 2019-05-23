@@ -706,6 +706,9 @@ pre {
   font-family: Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
   margin-bottom: 3px; }
 
+.timeline-label .word {
+  font-family: 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif; }
+
 #process .timeline-centered .timeline-entry .timeline-entry-inner {
   position: relative;
   margin-left: -20px; }
@@ -794,7 +797,7 @@ pre {
   display: block;
   width: 4px;
   background: #eee;
-  top: -3%;
+  top: -8%;
   right: -30px;
   bottom: -3%; }
 
@@ -826,7 +829,7 @@ pre {
 
 #process .present {
   position: absolute;
-  top: -3%;
+  top: -8%;
   right: 0;
   margin-top: -20px;
   line-height: 100%; }
@@ -840,7 +843,7 @@ pre {
 
 #process .dot_tp {
   position: absolute;
-  top: -3%;
+  top: -8%;
   right: -35px;
   background-color: transparent;
   height: 15px;

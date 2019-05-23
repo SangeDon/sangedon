@@ -55,10 +55,11 @@ function initSearch(datas){
 function showResult(datas){
     var $resultContent = document.querySelector('.ins-section-container');
     document.querySelector('.ins-search-input').addEventListener('input', function(){
-        var str="<section class = 'ins-section'><header class = 'ins-section-header'>文章</header>";
+        var str="<section class = 'ins-section'><header class = 'ins-section-header'><i class = 'fa fa-book'></i>文章</header>";
         var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
         $resultContent.innerHTML = "";
         if (this.value.trim().length <= 0) {
+            initSearch(datas)
             return;
         }
         // perform local searching
@@ -90,7 +91,7 @@ function showResult(datas){
             }
             // show search results
             if (isMatch) {
-                str += "<div class='ins-selectable ins-search-item' data-url = '"+data_url+"'><header><i class = 'icon icon-file'></i>"+data_title+"</header>";
+                str += "<div class='ins-selectable ins-search-item' data-url = '"+data_url+"'><header><i class = 'fa fa-file-o'></i>"+data_title+"</header>";
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
                 if (first_occur >= 0) {
                     // cut out 100 characters
