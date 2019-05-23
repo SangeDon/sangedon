@@ -39,12 +39,12 @@ var searchFunc = function(path, search_id, content_id) {
 
 function initSearch(datas){
     var $resultContent = document.querySelector('.ins-section-container');
-    var str="<section class = 'ins-section'><header class = 'ins-section-header'>文章<small>共"+datas.length+"篇</small></header>";
+    var str="<section class = 'ins-section'><header class = 'ins-section-header'><i class = 'fa fa-book'></i>文章<small>共"+datas.length+"篇</small></header>";
     datas.forEach(function(data) {
         var data_title = data.title.trim().toLowerCase();
         var data_url = data.url;
         // show all articles
-        str += "<div class='ins-selectable ins-search-item' data-url = '"+data_url+"'><header><i class = 'icon icon-file'></i>"+data_title+"</header>";
+        str += "<div class='ins-selectable ins-search-item' data-url = '"+data_url+"'><header><i class = 'fa fa-file-o'></i>"+data_title+"</header>";
         var content = data.content.trim().replace(/<[^>]+>/g,"");
         str += "<p class='ins-search-preview'>" + content + "</p></div>"
     });
