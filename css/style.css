@@ -357,7 +357,7 @@ div {
     font-size: 15px;
     line-height: 1.77;
     color: #444;
-    padding-top: 15px;
+    padding-top: 10px;
     text-align: justify;
     text-justify: distribute;
     word-break: normal; }
@@ -371,7 +371,7 @@ div {
       padding: 0 2em; }
     .post .post-content p {
       text-indent: 0em;
-      margin: 0 0 1.234em;
+      margin: 0 0 0em;
       word-break: break-word;
       overflow-wrap: break-word; }
       .post .post-content p code {
@@ -896,21 +896,25 @@ pre {
     right: 35px; } }
 
 /* read more*/
-.readmore a {
-  font-size: 14px;
-  color: #444;
-  margin: -10px 0;
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.readmore {
+  clear: left;
+  padding-top: 15px;
   float: right; }
-  .readmore a:after {
-    font-family: "FontAwesome";
-    content: "\f101";
-    padding-left: 0.3em; }
-  .readmore a:hover {
-    background: #F8F8F8;
-    border-bottom-color: #D26911; }
+  .readmore a {
+    font-size: 14px;
+    color: #444;
+    margin: -10px 0;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    float: right; }
+    .readmore a:after {
+      font-family: "FontAwesome";
+      content: "\f101";
+      padding-left: 0.3em; }
+    .readmore a:hover {
+      background: #F8F8F8;
+      border-bottom-color: #D26911; }
 
 /* syntax highlight*/
 figure.highlight,
