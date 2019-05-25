@@ -154,7 +154,7 @@
       <link href="/paper/Guns%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
       <url>/paper/Guns%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[<p>Guns基于SpringBoot 2，致力于做更简洁的后台管理系统。Guns项目代码简洁，注释丰富，上手容易，同时Guns包含许多基础模块(用户管理，角色管理，部门管理，字典管理等10个模块)，可以直接作为一个后台管理系统的脚手架! </p><a id="more"></a><ul><li>下载</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 下载到指定文件夹</span><br><span class="line">localhost:IDEA-Workspace sangedon$ git clone https://github.com/stylefeng/Guns.git</span><br></pre></td></tr></table></figure><ul><li>部署</li></ul><p>通过<code>idea</code>导入，略</p><ul><li>启动</li></ul><img src="/2019/05/20/Guns后台管理框架学习/2019/05/20/Guns后台管理框架学习/1.png" title="启动">]]></content>
+        <content type="html"><![CDATA[<p>Guns基于SpringBoot 2，致力于做更简洁的后台管理系统。Guns项目代码简洁，注释丰富，上手容易，同时Guns包含许多基础模块(用户管理，角色管理，部门管理，字典管理等10个模块)，可以直接作为一个后台管理系统的脚手架! </p><a id="more"></a><ul><li>下载</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 下载到指定文件夹</span><br><span class="line">localhost:IDEA-Workspace sangedon$ git clone https://github.com/stylefeng/Guns.git</span><br></pre></td></tr></table></figure><ul><li>部署</li></ul><p>通过<code>idea</code>导入，略</p><ul><li>启动</li></ul><img src="/paper/Guns后台管理框架学习/paper/Guns后台管理框架学习/1.png" title="启动">]]></content>
       
       
       
