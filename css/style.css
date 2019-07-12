@@ -300,6 +300,8 @@ div {
     font-family: bold 25px/1.1 ff-tisa-web-pro,Cambria,"Times New Roman",Georgia,Times,sans-serif; }
     .post .post-title a {
       color: #555; }
+  .post .post-title.post-index {
+    font-size: 25px; }
   .post .post-meta-index {
     padding: 0;
     margin: 15px 0 0;
