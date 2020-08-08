@@ -1,7 +1,7 @@
 ---
 title: Nginx安装及配置
 date: 2020-07-12 11:30:54
-tags:[web, 服务器, 负载均衡]
+tags: [服务器, 负载均衡]
 categories: web
 ---
 
