@@ -1,10 +1,5 @@
----
-
 title: FastDFS在Ubuntu上的安装及使用
-
 tags: 学习笔记
-
----
 
 
 

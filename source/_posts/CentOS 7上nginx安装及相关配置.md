@@ -2,6 +2,7 @@
 title: CentOS 7上Nginx的安装及基本配置
 tags: [学习笔记, 服务器]
 categories: 中间件
+date: 2019-06-23 09:50:12
 ---
 
 <!-- more -->
