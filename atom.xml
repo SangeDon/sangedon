@@ -5,9 +5,9 @@
   <subtitle>心即理</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.sangedon.cn/"/>
-  <updated>2020-09-23T05:14:55.467Z</updated>
-  <id>http://blog.sangedon.cn/</id>
+  <link href="http://sangedon.cn/"/>
+  <updated>2020-09-23T16:06:34.055Z</updated>
+  <id>http://sangedon.cn/</id>
   
   <author>
     <name>董先生</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Mac下K8S环境搭建</title>
-    <link href="http://blog.sangedon.cn/paper/Mac%E4%B8%8BK8S%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://blog.sangedon.cn/paper/Mac下K8S环境搭建/</id>
+    <link href="http://sangedon.cn/paper/Mac%E4%B8%8BK8S%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://sangedon.cn/paper/Mac下K8S环境搭建/</id>
     <published>2020-06-23T01:50:12.000Z</published>
-    <updated>2020-09-23T05:14:55.467Z</updated>
+    <updated>2020-09-23T16:06:34.055Z</updated>
     
     <content type="html"><![CDATA[<h2 id="搭建K8S环境"><a href="#搭建K8S环境" class="headerlink" title="搭建K8S环境"></a>搭建K8S环境</h2><p>参考文档：<a href="https://github.com/AliyunContainerService/k8s-for-docker-desktop" target="_blank" rel="noopener">https://github.com/AliyunContainerService/k8s-for-docker-desktop</a></p><ol><li><h6 id="docker-已安装，版本为"><a href="#docker-已安装，版本为" class="headerlink" title="docker 已安装，版本为"></a>docker 已安装，版本为</h6><p><img src="/paper/Mac下K8S环境搭建/image-20200810214022444.png" alt="image-20200810214022444"></p></li><li><h6 id="下载和-Kubernetes-版本匹配的k8s相关依赖镜像资源，配置好docker-的阿里云或者中科大的镜像加速"><a href="#下载和-Kubernetes-版本匹配的k8s相关依赖镜像资源，配置好docker-的阿里云或者中科大的镜像加速" class="headerlink" title="下载和 Kubernetes 版本匹配的k8s相关依赖镜像资源，配置好docker 的阿里云或者中科大的镜像加速"></a>下载和 Kubernetes 版本匹配的k8s相关依赖镜像资源，配置好docker 的阿里云或者中科大的镜像加速</h6></li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 下载命令</span><br><span class="line">git clone git@github.com:AliyunContainerService/k8s-for-docker-desktop.git -b v1.16.5</span><br></pre></td></tr></table></figure><ol start="3"><li><h6 id="进入到下载的-k8s-for-docker-desktop-目录，执行如下命令"><a href="#进入到下载的-k8s-for-docker-desktop-目录，执行如下命令" class="headerlink" title="进入到下载的 k8s-for-docker-desktop 目录，执行如下命令"></a>进入到下载的 k8s-for-docker-desktop 目录，执行如下命令</h6></li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./load_images.sh</span><br></pre></td></tr></table></figure><ol start="4"><li><h6 id="勾选如下，重启即可"><a href="#勾选如下，重启即可" class="headerlink" title="勾选如下，重启即可"></a>勾选如下，重启即可</h6><p><img src="/paper/Mac下K8S环境搭建/image-20200810215529829.png" alt="image-20200810215529829"></p></li></ol><ol start="5"><li><h6 id="部署-Kubernetes-dashboard（执行了第二条）"><a href="#部署-Kubernetes-dashboard（执行了第二条）" class="headerlink" title="部署 Kubernetes dashboard（执行了第二条）"></a>部署 Kubernetes dashboard（执行了第二条）</h6></li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-rc5/aio/deploy/recommended.yaml</span><br><span class="line"><span class="meta">#</span> 或</span><br><span class="line">kubectl create -f kubernetes-dashboard.yaml</span><br></pre></td></tr></table></figure><ol start="6"><li>检查 kubernetes-dashboard 应用状态</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod -n kubernetes-dashboard</span><br></pre></td></tr></table></figure><ol start="7"><li>开启 API Server 访问代理</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl proxy</span><br></pre></td></tr></table></figure><ol start="8"><li>进入k8s仪表盘</li></ol><p>链接：<a href="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login" target="_blank" rel="noopener">http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login</a></p><ol start="9"><li>配置控制台访问令牌</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 获取登陆 token</span><br><span class="line">TOKEN=$(kubectl -n kube-system describe secret default| awk '$1=="token:"&#123;print $2&#125;')</span><br><span class="line">kubectl config set-credentials docker-for-desktop --token="$&#123;TOKEN&#125;"</span><br><span class="line">echo $TOKEN</span><br></pre></td></tr></table></figure><ul><li>token</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User "docker-for-desktop" set.</span><br><span class="line">eyJhbGciOiJSUzI1NiIsImtpZCI6Ilp3bUthZkNlZzh3bWlsNDJoTkMxVS1nbm1RSU9TM1VPbXhDcURleG9WRnMifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkZWZhdWx0LXRva2VuLWtmeDI3Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImRlZmF1bHQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIzMGM4MWU0OS1lY2QxLTQ1NjktOGY1Mi02OWZiNTMyOWNmYTgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06ZGVmYXVsdCJ9.uasjTbEU1YEnsYJZ48SK6RBZ9f-SNw9UWimAPe4VQ-2YBExruye04FFREPKXIQw6TJCQ83Vh35kNNXQgYVjEhPMFbgG1oASJZ1fskEul8lBVD2jh41Ul7xrIs4DhADAGpov8nHib7OHN7pkEh8h3UicRdOlYD6pYw2hFvxmHy_ZZwZ8WFXlOeKxh-VT9PYx_LMsNHcZzySO7sQMq7N3jQN7eI8ZFIhoXkA0PaSIb4L0FPYqY0OpwKth0KB6E0181CWUdJVlcICpATL8KPR8HobbGn6uTF5r6gLSX58af1bxGeK4JvKf2sypMcoOdr1s-AYJ8ur7-3E98XWoqsW7UZQ</span><br></pre></td></tr></table></figure><ul><li>安装 ingress失败解决方案</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 报错如下</span><br><span class="line">The connection to the server raw.githubusercontent.com was refused - did you specify the right host or port?</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 解决如下</span><br><span class="line">sudo vi /etc/hosts</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 添加如下配置即可解决</span><br><span class="line">151.101.76.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure><ul><li>安装kubesphere-minimal，参考：<a href="https://kubesphere.com.cn/docs/zh-CN/installation/prerequisites/" target="_blank" rel="noopener">https://kubesphere.com.cn/docs/zh-CN/installation/prerequisites/</a></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/kubesphere-minimal.yaml</span><br></pre></td></tr></table></figure><ul><li><p>安装helm</p><p>下载：<a href="https://github.com/helm/helm/releases" target="_blank" rel="noopener">https://github.com/helm/helm/releases</a></p><p>版本：2.16.2</p><p>解压下载的文件后将可执行文件helm添加到path</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mv helm /usr/local/bin/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 验证安装</span><br><span class="line">helm version</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 输出</span><br><span class="line">Client: &amp;version.Version&#123;SemVer:"v2.16.2", GitCommit:"bbdfe5e7803a12bbdf97e94cd847859890cf4050", GitTreeState:"clean"&#125;</span><br></pre></td></tr></table></figure></li><li><p>初始化 helm 并安装 Tiller</p></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helm init --upgrade -i registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.16.2 --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -34,21 +34,21 @@
     
     </summary>
     
-      <category term="环境搭建" scheme="http://blog.sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <category term="环境搭建" scheme="http://sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="docker" scheme="http://blog.sangedon.cn/tags/docker/"/>
+      <category term="docker" scheme="http://sangedon.cn/tags/docker/"/>
     
-      <category term="Mac" scheme="http://blog.sangedon.cn/tags/Mac/"/>
+      <category term="Mac" scheme="http://sangedon.cn/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>Mac下安装virturebox及vagrant虚拟机环境</title>
-    <link href="http://blog.sangedon.cn/paper/Mac%E4%B8%8B%E5%AE%89%E8%A3%85virturebox%E5%8F%8Avagrant%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83/"/>
-    <id>http://blog.sangedon.cn/paper/Mac下安装virturebox及vagrant虚拟机环境/</id>
+    <link href="http://sangedon.cn/paper/Mac%E4%B8%8B%E5%AE%89%E8%A3%85virturebox%E5%8F%8Avagrant%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83/"/>
+    <id>http://sangedon.cn/paper/Mac下安装virturebox及vagrant虚拟机环境/</id>
     <published>2020-06-22T06:32:15.000Z</published>
-    <updated>2020-09-23T05:14:55.472Z</updated>
+    <updated>2020-09-23T16:06:36.179Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装virturebox"><a href="#安装virturebox" class="headerlink" title="安装virturebox"></a>安装virturebox</h2><p>下载：<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a></p><p>版本：6.1.12</p><p>安装步骤：双击下一步即可</p><h2 id="安装vagrant"><a href="#安装vagrant" class="headerlink" title="安装vagrant"></a>安装vagrant</h2><p>下载：<a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">https://www.vagrantup.com/downloads.html</a></p><p>版本：2.2.9</p><p>安装步骤：双击下一步即可</p><ul><li>虚拟机Box下载地址</li></ul><blockquote><p>官方虚拟机box下载地址：<a href="https://app.vagrantup.com/boxes/search" target="_blank" rel="noopener">https://app.vagrantup.com/boxes/search</a></p><p>仓库虚拟机box下载地址：<a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">http://www.vagrantbox.es/</a></p></blockquote><h2 id="配置vagrant"><a href="#配置vagrant" class="headerlink" title="配置vagrant"></a>配置vagrant</h2><p>查看vagrant安装版本</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 输入</span><br><span class="line">vagrant -v</span><br><span class="line"><span class="meta">#</span> 输出</span><br><span class="line">Vagrant 2.2.9</span><br></pre></td></tr></table></figure><ul><li>检查已有的虚拟机列表vagrant box list，提示还没有任何虚拟机</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dongliangqiong@dongliaongdeMBP sangedon % vagrant box list</span><br><span class="line">There are no installed boxes! Use `vagrant box add` to add some.</span><br></pre></td></tr></table></figure><ul><li>将官网box下载下来的 <code>CentOS-7-x86_64-Vagrant-1902_01.VirtualBox.box</code>放入 <code>/Users/dongliangqiong/Documents/sangedon/devtools/software/vagrant</code>目录，后执行如下操作</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add centos7 /Users/dongliangqiong/Documents/sangedon/devtools/software/vagrant/CentOS-7-x86_64-Vagrant-1902_01.VirtualBox.box</span><br></pre></td></tr></table></figure><ul><li>执行<code>vagrant init centos7</code>，即可在当前目录生成此虚拟机的配置文件Vagrantfile</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dongliangqiong@dongliaongdeMBP sangedon % vagrant init centos/7</span><br><span class="line">A `Vagrantfile` has been placed in this directory. You are now</span><br><span class="line">ready to `vagrant up` your first virtual environment! Please read</span><br><span class="line">the comments in the Vagrantfile as well as documentation on</span><br><span class="line">`vagrantup.com` for more information on using Vagrant.</span><br></pre></td></tr></table></figure><ul><li><p>执行命令<code>vagrant up</code>，启动虚拟机（参考：<a href="http://www.voidcn.com/article/p-zmehqqii-bdx.html）" target="_blank" rel="noopener">http://www.voidcn.com/article/p-zmehqqii-bdx.html）</a></p></li><li><p>链接虚拟机</p></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant ssh</span><br></pre></td></tr></table></figure><ul><li>设置root用户登陆</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vagrant登陆进去之后跳转root账户</span><br><span class="line">sudo -s</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 设置root账户账号</span><br><span class="line">passwd</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 修改 /etc/ssh/sshd_config 文件，下面两项改为yes</span><br><span class="line">PermitRootLogin yes</span><br><span class="line">PasswordAuthentication yes</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 重启服务</span><br><span class="line">service sshd restart</span><br></pre></td></tr></table></figure><blockquote><p>虚拟机创建成功，可通过 <code>ssh root@ip</code> 命令连接</p></blockquote>]]></content>
     
@@ -61,17 +61,17 @@
     
     </summary>
     
-      <category term="环境搭建" scheme="http://blog.sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <category term="环境搭建" scheme="http://sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Mac" scheme="http://blog.sangedon.cn/tags/Mac/"/>
+      <category term="Mac" scheme="http://sangedon.cn/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>Mac 电脑基础开发环境搭建</title>
-    <link href="http://blog.sangedon.cn/paper/Mac-%E7%94%B5%E8%84%91%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://blog.sangedon.cn/paper/Mac-电脑基础开发环境搭建/</id>
+    <link href="http://sangedon.cn/paper/Mac-%E7%94%B5%E8%84%91%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://sangedon.cn/paper/Mac-电脑基础开发环境搭建/</id>
     <published>2020-06-12T05:19:17.000Z</published>
     <updated>2020-09-23T05:14:55.466Z</updated>
     
@@ -86,17 +86,17 @@
     
     </summary>
     
-      <category term="环境搭建" scheme="http://blog.sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <category term="环境搭建" scheme="http://sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Mac" scheme="http://blog.sangedon.cn/tags/Mac/"/>
+      <category term="Mac" scheme="http://sangedon.cn/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>Docker中安装Redis</title>
-    <link href="http://blog.sangedon.cn/paper/Docker%E4%B8%AD%E5%AE%89%E8%A3%85Redis/"/>
-    <id>http://blog.sangedon.cn/paper/Docker中安装Redis/</id>
+    <link href="http://sangedon.cn/paper/Docker%E4%B8%AD%E5%AE%89%E8%A3%85Redis/"/>
+    <id>http://sangedon.cn/paper/Docker中安装Redis/</id>
     <published>2019-09-20T07:51:27.000Z</published>
     <updated>2020-09-23T05:14:55.465Z</updated>
     
@@ -114,17 +114,17 @@
     
     </summary>
     
-      <category term="环境搭建" scheme="http://blog.sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <category term="环境搭建" scheme="http://sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="docker" scheme="http://blog.sangedon.cn/tags/docker/"/>
+      <category term="docker" scheme="http://sangedon.cn/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>Docker中安装MySQL</title>
-    <link href="http://blog.sangedon.cn/paper/Docker%E4%B8%AD%E5%AE%89%E8%A3%85MySQL/"/>
-    <id>http://blog.sangedon.cn/paper/Docker中安装MySQL/</id>
+    <link href="http://sangedon.cn/paper/Docker%E4%B8%AD%E5%AE%89%E8%A3%85MySQL/"/>
+    <id>http://sangedon.cn/paper/Docker中安装MySQL/</id>
     <published>2019-09-20T07:05:52.000Z</published>
     <updated>2020-09-23T05:14:55.465Z</updated>
     
@@ -142,17 +142,17 @@
     
     </summary>
     
-      <category term="环境搭建" scheme="http://blog.sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <category term="环境搭建" scheme="http://sangedon.cn/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="docker" scheme="http://blog.sangedon.cn/tags/docker/"/>
+      <category term="docker" scheme="http://sangedon.cn/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>CentOS 7上Nginx的安装及基本配置</title>
-    <link href="http://blog.sangedon.cn/paper/CentOS%207%E4%B8%8Anginx%E5%AE%89%E8%A3%85%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
-    <id>http://blog.sangedon.cn/paper/CentOS 7上nginx安装及相关配置/</id>
+    <link href="http://sangedon.cn/paper/CentOS%207%E4%B8%8Anginx%E5%AE%89%E8%A3%85%E5%8F%8A%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
+    <id>http://sangedon.cn/paper/CentOS 7上nginx安装及相关配置/</id>
     <published>2019-06-23T01:50:12.000Z</published>
     <updated>2020-09-23T05:14:55.465Z</updated>
     
@@ -168,19 +168,19 @@
     
     </summary>
     
-      <category term="中间件" scheme="http://blog.sangedon.cn/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+      <category term="中间件" scheme="http://sangedon.cn/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     
-      <category term="服务器" scheme="http://blog.sangedon.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="http://sangedon.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="学习笔记" scheme="http://blog.sangedon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://sangedon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>博文列表</title>
-    <link href="http://blog.sangedon.cn/paper/%E6%94%B6%E8%97%8F%E5%88%97%E8%A1%A8/"/>
-    <id>http://blog.sangedon.cn/paper/收藏列表/</id>
+    <link href="http://sangedon.cn/paper/%E6%94%B6%E8%97%8F%E5%88%97%E8%A1%A8/"/>
+    <id>http://sangedon.cn/paper/收藏列表/</id>
     <published>2019-06-13T08:25:18.000Z</published>
     <updated>2020-09-23T05:14:55.473Z</updated>
     
@@ -197,17 +197,17 @@
     
     </summary>
     
-      <category term="收藏" scheme="http://blog.sangedon.cn/categories/%E6%94%B6%E8%97%8F/"/>
+      <category term="收藏" scheme="http://sangedon.cn/categories/%E6%94%B6%E8%97%8F/"/>
     
     
-      <category term="[object Object]" scheme="http://blog.sangedon.cn/tags/object-Object/"/>
+      <category term="[object Object]" scheme="http://sangedon.cn/tags/object-Object/"/>
     
   </entry>
   
   <entry>
     <title>2019学习生活规划</title>
-    <link href="http://blog.sangedon.cn/paper/2019%E5%AD%A6%E4%B9%A0%E7%94%9F%E6%B4%BB%E8%A7%84%E5%88%92/"/>
-    <id>http://blog.sangedon.cn/paper/2019学习生活规划/</id>
+    <link href="http://sangedon.cn/paper/2019%E5%AD%A6%E4%B9%A0%E7%94%9F%E6%B4%BB%E8%A7%84%E5%88%92/"/>
+    <id>http://sangedon.cn/paper/2019学习生活规划/</id>
     <published>2019-05-25T13:03:22.000Z</published>
     <updated>2020-09-23T05:14:55.464Z</updated>
     
@@ -219,17 +219,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://blog.sangedon.cn/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://sangedon.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="规划" scheme="http://blog.sangedon.cn/tags/%E8%A7%84%E5%88%92/"/>
+      <category term="规划" scheme="http://sangedon.cn/tags/%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
   <entry>
     <title>分布式锁的概念及实现</title>
-    <link href="http://blog.sangedon.cn/paper/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://blog.sangedon.cn/paper/分布式锁的概念及实现/</id>
+    <link href="http://sangedon.cn/paper/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://sangedon.cn/paper/分布式锁的概念及实现/</id>
     <published>2019-05-20T08:45:09.000Z</published>
     <updated>2020-09-23T05:14:55.472Z</updated>
     
@@ -245,19 +245,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://blog.sangedon.cn/categories/Java/"/>
+      <category term="Java" scheme="http://sangedon.cn/categories/Java/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.sangedon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://sangedon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="分布式" scheme="http://blog.sangedon.cn/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+      <category term="分布式" scheme="http://sangedon.cn/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>滑动窗口问题</title>
-    <link href="http://blog.sangedon.cn/paper/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%97%AE%E9%A2%98/"/>
-    <id>http://blog.sangedon.cn/paper/滑动窗口问题/</id>
+    <link href="http://sangedon.cn/paper/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%97%AE%E9%A2%98/"/>
+    <id>http://sangedon.cn/paper/滑动窗口问题/</id>
     <published>2019-05-20T07:16:23.000Z</published>
     <updated>2020-09-23T05:14:55.473Z</updated>
     
@@ -273,10 +273,10 @@
     
     </summary>
     
-      <category term="算法" scheme="http://blog.sangedon.cn/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://sangedon.cn/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="LeetCode" scheme="http://blog.sangedon.cn/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="http://sangedon.cn/tags/LeetCode/"/>
     
   </entry>
   
