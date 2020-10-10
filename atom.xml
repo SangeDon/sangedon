@@ -182,7 +182,7 @@
     <link href="http://blog.sangedon.cn/paper/%E6%94%B6%E8%97%8F%E5%88%97%E8%A1%A8/"/>
     <id>http://blog.sangedon.cn/paper/收藏列表/</id>
     <published>2019-06-13T08:25:18.000Z</published>
-    <updated>2020-09-23T05:14:55.473Z</updated>
+    <updated>2020-10-10T04:25:51.020Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><ul><li><a href="https://segmentfault.com/a/1190000015815061" target="_blank" rel="noopener">MySQL/InnoDB中，乐观锁、悲观锁、共享锁、排它锁、行锁、表锁、死锁概念的理解</a></li><li><a href="https://segmentfault.com/a/1190000008491597" target="_blank" rel="noopener">详细深入分析Java ClassLoader 工作机制</a></li><li><a href="https://segmentfault.com/a/1190000016085105" target="_blank" rel="noopener">Java内存模型</a></li><li><a href="https://juejin.im/post/5c6b9c09f265da2d8a55a855" target="_blank" rel="noopener">MySQL优化面试</a></li></ul>]]></content>
     
@@ -200,7 +200,7 @@
       <category term="收藏" scheme="http://blog.sangedon.cn/categories/%E6%94%B6%E8%97%8F/"/>
     
     
-      <category term="[object Object]" scheme="http://blog.sangedon.cn/tags/object-Object/"/>
+      <category term="学习笔记" scheme="http://blog.sangedon.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
