@@ -139,4 +139,11 @@ source ~/.bash_profile
   sudo npm install -g hexo
   ```
 
+- 安装 yarn
+
+  ```shell
+  curl -o- -L https://yarnpkg.com/install.sh | bash
+  ```
+
+  
 

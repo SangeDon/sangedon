@@ -240,3 +240,10 @@ http://elasticsearch/customer/external/1?if_seq_no=1&if_primary_term=1
 
 
 ##### 查询
+
+
+
+### 安装IK分词器
+
+- 下载(和es版本保持一致)：https://github.com/medcl/elasticsearch-analysis-ik/releases
+- 解压之后放入es映射的plugins目录下即可
