@@ -1,0 +1,6 @@
+if site.data.timeline || site.data.timeline.prev
+  .post-nav
+    if site.data.timeline
+      a.pre(href=url_for(site.data.timeline.prev_link ? site.data.timeline.prev_link : page.prev.path))= site.data.timeline.prev.title
+    if site.data.timeline.next
+      a.next(href=url_for(site.data.timeline.next_link ? site.data.timeline.next_link : page.next.path))= site.data.timeline.next.title

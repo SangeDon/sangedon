@@ -1,0 +1,3 @@
+if site.data.timeline.next || site.data.timeline.prev
+  nav.page-navigator
+    != paginator({prev_text: __('previous'), next_text: __('next')})
