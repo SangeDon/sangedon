@@ -99,7 +99,7 @@ links:
 pagination_dir: _data
 
 timeline_generator:
-  per_page: 10
+  per_page: 20
   order_by: num
 # Static files
 js: js
