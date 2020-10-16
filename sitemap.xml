@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sangedon.cn/guestbook/index.html</loc>
+    
+    <lastmod>2020-10-15T15:30:16.252Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sangedon.cn/about/index.html</loc>
+    
+    <lastmod>2020-10-15T15:28:35.126Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sangedon.cn/paper/Java%E5%AE%9E%E7%8E%B0SSL%E5%8F%8C%E5%90%91%E8%AE%A4%E8%AF%81/</loc>
     
     <lastmod>2020-10-13T11:21:59.766Z</lastmod>
@@ -79,23 +93,9 @@
   </url>
   
   <url>
-    <loc>https://sangedon.cn/guestbook/index.html</loc>
-    
-    <lastmod>2020-09-23T05:14:55.476Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://sangedon.cn/books/index.html</loc>
     
     <lastmod>2020-09-23T05:14:55.475Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sangedon.cn/about/index.html</loc>
-    
-    <lastmod>2020-09-23T05:14:55.474Z</lastmod>
     
   </url>
   
