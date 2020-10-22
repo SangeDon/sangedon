@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sangedon.cn/about/index.html</loc>
+    
+    <lastmod>2020-10-21T14:47:54.561Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sangedon.cn/paper/Docker%E4%B8%AD%E5%AE%89%E8%A3%85MySQL/</loc>
     
     <lastmod>2020-10-21T14:16:19.225Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>https://sangedon.cn/guestbook/index.html</loc>
     
     <lastmod>2020-10-16T05:00:06.367Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sangedon.cn/about/index.html</loc>
-    
-    <lastmod>2020-10-16T04:59:52.627Z</lastmod>
     
   </url>
   
