@@ -5,6 +5,8 @@ tags: [Mac, docker]
 categories: 环境搭建
 ---
 
+<!-- more -->
+
 ## 搭建K8S环境
 
 参考文档：https://github.com/AliyunContainerService/k8s-for-docker-desktop

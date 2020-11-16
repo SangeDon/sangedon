@@ -5,6 +5,7 @@ categories: 环境搭建
 date: 2020-06-12 13:19:17
 ---
 
+<!-- more -->
 
 ## 安装git
 
@@ -17,8 +18,8 @@ date: 2020-06-12 13:19:17
 配置 git 账号
 
 ```shell
-git config user.name "sangedon"
-git config user.email "sange.dong@outlook.com"
+git config --global user.name "sangedon"
+git config --global user.email "sange.dong@outlook.com"
 ```
 
 
