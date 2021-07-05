@@ -67,6 +67,8 @@ oracle下载登陆账号：2696671285@qq.com / Oracle123
 
 安装目录：/Library/Java/JavaVirtualMachines
 
+> **除了jdk8之外，还安装了jdk11**
+
 
 
 ## 安装 Maven
@@ -101,7 +103,7 @@ source ~/.bash_profile
 <localRepository>/Users/dongliangqiong/Documents/sangedon/devtools/software/maven-repo</localRepository>
 ```
 
-
+> 除此之外，还安装了3.6.1版本的maven
 
 ## 安装Node相关
 
@@ -109,28 +111,23 @@ source ~/.bash_profile
 
   官网下载：https://nodejs.org/en/download/
 
-  版本： Latest LTS Version: **12.18.3** (includes npm 6.14.6)
+  版本： Latest LTS Version: v14.15.4 (includes npm 6.14.10)
 
-  下载文件：node-v12.18.3.pkg
+  下载文件：node-v14.15.4.pkg
 
   安装步骤：双击 -> 下一步 即可
-
-  成功截图：
-
-  ![image-20200808111650459](Mac-电脑基础开发环境搭建/image-20200808111650459.png)
-
 
 
 - 添加 淘宝npm镜像
 
   ```shell
-  npm config set registry https://registry.npm.taobao.org
+  sudo npm config set registry https://registry.npm.taobao.org
   ```
 
 - 安装cnpm 代替 npm使用
 
   ```shell
-  npm install -g cnpm --registry=https://registry.npm.taobao.org
+  sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
   ```
 
 

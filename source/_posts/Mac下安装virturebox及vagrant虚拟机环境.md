@@ -11,7 +11,7 @@ date: 2020-06-22 14:32:15
 
 下载：https://www.virtualbox.org/wiki/Downloads
 
-版本：6.1.12
+版本：6.1.18
 
 安装步骤：双击下一步即可
 
@@ -21,7 +21,7 @@ date: 2020-06-22 14:32:15
 
 下载：https://www.vagrantup.com/downloads.html
 
-版本：2.2.9
+版本：2.2.14
 
 安装步骤：双击下一步即可
 
@@ -60,7 +60,7 @@ vagrant box add centos7 /Users/dongliangqiong/Documents/sangedon/devtools/softwa
 - 执行`vagrant init centos7`，即可在当前目录生成此虚拟机的配置文件Vagrantfile
 
 ```shell
-dongliangqiong@dongliaongdeMBP sangedon % vagrant init centos/7
+dongliangqiong@dongliaongdeMBP sangedon % vagrant init centos7
 A `Vagrantfile` has been placed in this directory. You are now
 ready to `vagrant up` your first virtual environment! Please read
 the comments in the Vagrantfile as well as documentation on
